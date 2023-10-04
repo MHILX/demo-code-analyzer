@@ -1,0 +1,26 @@
+name: Build Codebase
+
+on:
+  push:
+    branches:
+        - 'feature/*'
+        - 'bugfix/*'
+        - 'hotfix/*'
+        - 'release/*'
+        - 'main'
+        - 'master'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+    super-linter:
+        name: Lint Codebase
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+      
+            - name: Lint Code Base
+              uses: super-linter/super-linter@v5
+    
