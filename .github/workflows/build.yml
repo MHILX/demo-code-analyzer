@@ -40,8 +40,8 @@ jobs:
               env:
                 VALIDATE_ALL_CODEBASE: false
                 DEFAULT_BRANCH: main
-                #LINTER_RULES_PATH: /
-                #CSS_FILE_NAME: .stylelintrc.json
+                LINTER_RULES_PATH: /.github/linters/                
+                CSS_FILE_NAME: .stylelintrc.json
                 #JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
                 VALIDATE_CSS: true
                 #VALIDATE_JAVASCRIPT_ES: true
