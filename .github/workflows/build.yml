@@ -39,7 +39,7 @@ jobs:
               run: npm ci
       
             - name: Run Stylelint
-              env:
-                LINTER_RULES_PATH: .github/linters/.stylelintrc.json
-              run: npx stylelint "**/*.css" 
+              #env:
+                # LINTER_RULES_PATH: .github/linters/.stylelintrc.json
+              run: npx stylelint "**/*.css" --config .github/linters/.stylelintrc.json
     
