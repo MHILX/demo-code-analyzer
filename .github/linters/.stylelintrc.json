@@ -1,13 +1,10 @@
 {
     "extends": "stylelint-config-standard",
-    "rules": {
-        "unit-no-unknown": [
-            true,
-            {
-                "ignoreUnits": [
-                    "rem"
-                ]
-            }
-        ]
+    "rules": { 
+        "declaration-property-unit-disallowed-list": {
+            "font-size": ["px"],
+            "message": "Avoid using 'px' units for font-size. Use 'rem' or another unit instead."
+          },
+        "declaration-no-important": true
     }
 }

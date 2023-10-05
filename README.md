@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).0
+
+## Run stylelint with custom rules
+    npx stylelint "**/*.css" --config .github/linters/.stylelintrc.json  
+
+- The "unit-no-unknown" rule ensures that unknown units are not used, except for the ones specified in the "ignoreUnits" array. In this case, we're only allowing the rem unit.
+- The "unit-disallowed-list" rule specifies a list of disallowed units. In this case, we only include "px", which will raise an error if any properties use px units.
 
 ## Available Scripts
 
