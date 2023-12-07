@@ -1,0 +1,5 @@
+# Default reviewers for code in the repo.
+* @MHILX
+
+# docs/* @LiteObject
+src/* @MHILX, @LiteObject
