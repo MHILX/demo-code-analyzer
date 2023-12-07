@@ -52,7 +52,7 @@ jobs:
             - name: Run Stylelint
               #env:
                 # LINTER_RULES_PATH: .github/linters/.stylelintrc.json
-              run: npx stylelint --quiet "**/*.css" --config .github/linters/.stylelintrc.json
+              run: git diff --name-only origin/main...HEAD | grep -E '\.(ts|tsx)$' | xargs npx stylelint --quiet "**/*.css" --config .github/linters/.stylelintrc.json
     
     deploy-dev:
       name: Deploy to Dev
