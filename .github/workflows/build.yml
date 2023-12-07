@@ -33,21 +33,21 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-            - name: Setup Node JS
-              uses: actions/setup-node@v3
-              with:
-                node-version: '18.x'
-
             - name: Checkout Code
               uses: actions/checkout@v4
-      
-            - name: Install dependencies
-              run: npm install --silent            
-      
+
             - name: Run Stylelint
               #env:
                 # LINTER_RULES_PATH: .github/linters/.stylelintrc.json
-              run: git diff --name-only origin/main...HEAD | grep -E '\.(ts|tsx)$' | xargs npx stylelint --quiet "**/*.css" --config .github/linters/.stylelintrc.json
+              run: npx stylelint --quiet "**/*.css" --config .github/linters/.stylelintrc.json
+
+            - name: Setup Node JS
+              uses: actions/setup-node@v3
+              with:
+                node-version: '18.x'            
+      
+            - name: Install dependencies
+              run: npm ci
 
             - name: Run build and test
               run: |        
