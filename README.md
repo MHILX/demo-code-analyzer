@@ -1,9 +1,24 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).0
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Create a react app
+    npx create-react-app <APP_NAME> --template typescript
+
+## Install stylelint
+    npm install stylelint stylelint-config-standard --save-dev
+
+### A slightly different command specifying the registry
+    npm install stylelint stylelint-config-standard --save-dev --registry=https://registry.npmjs.org  
+
+## Create a stylelint configuration file (usually named `.stylelintrc` or `stylelint.config.js`) in project's root directory
+    npx stylelint --initnpx stylelint "**/*.css" --config .github/linters/.stylelintrc.json  
+
+## Run stylelint to lint your CSS or SCSS files
+    npx stylelint "src/**/*.css"
 
 ## Run stylelint with custom rules
-    npx stylelint "**/*.css" --config .github/linters/.stylelintrc.json  
+    
 
 - The "unit-no-unknown" rule ensures that unknown units are not used, except for the ones specified in the "ignoreUnits" array. In this case, we're only allowing the rem unit.
 - The "unit-disallowed-list" rule specifies a list of disallowed units. In this case, we only include "px", which will raise an error if any properties use px units.
