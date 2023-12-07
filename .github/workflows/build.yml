@@ -7,16 +7,10 @@ name: Build Codebase
 
 on:
   push:
-    branches:
-      - 'feature/*'
-      - 'bugfix/*'
-      - 'hotfix/*'
-      - 'release/*'
-      - 'main'
-      - 'master'
+    branches: [master, 'feature/*', 'bugfix/*', 'hotfix/*', 'release/*']     
   pull_request:
-    branches:
-      - master
+    types: ['opened', 'edited', 'reopened', 'synchronize']
+    branches: [master]
 
 jobs:
     test-build:
