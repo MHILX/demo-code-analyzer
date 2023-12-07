@@ -62,3 +62,15 @@ jobs:
         - name: Print Environment Variables & Secrets
           run: |
             echo deploying to qa...
+
+    publish-package:
+      name: Publish Package
+      needs: [deploy-prep, deploy-dev, deploy-qa]
+      runs-on: ubuntu-latest
+      environment:
+        name: prod
+        url: 'https://www.example.com'
+      steps:
+        - name: Print Environment Variables & Secrets
+          run: |
+            echo publishing package...
