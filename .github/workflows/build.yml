@@ -38,6 +38,11 @@ jobs:
               run: |        
                 npm run build --if-present
                 npm run test --if-present
+
+            - name: Special Step for Master Branch
+              if: (github.ref == 'refs/heads/master')
+              run: |
+                echo This step runs only on master branch
     
     deploy-dev:
       name: Deploy to Dev

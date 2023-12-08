@@ -32,7 +32,7 @@
 
 .my-style {
   color: teal;
-  font-size: 20px;
+  font-size: 20rem;
 }
 
 @keyframes app-logo-spin {
