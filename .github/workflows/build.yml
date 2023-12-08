@@ -28,7 +28,7 @@ jobs:
 
             - name: Install dependencies
               run: npm install --silent
-
+              
             - name: Run Stylelint
               #env:
                 # LINTER_RULES_PATH: .github/linters/.stylelintrc.json
